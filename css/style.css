@@ -58,6 +58,7 @@ nav>a{
     text-decoration: none;
 }
 .carousel{
+    position: relative;
     margin: 0 auto;
     width: 600px;
     height: 310px;
