@@ -17,7 +17,9 @@
           <a href="4.html">Игры</a>
           <a href="4.html">Контакты</a> 
        </nav>
-        
+        <div class="carousel">
+            
+        </div>
     </content>
 </suture>
 </body>
