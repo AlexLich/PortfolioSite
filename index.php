@@ -72,26 +72,20 @@
 					  <a href="4.html">Игры</a>
 					  <a href="4.html">Контакты</a>
 					</nav>
-					<div id="container">
-						<div>
-							
+					<div class="main">
+						<div class="content1">
+						 <p class="content">Content1</p>
+					 </div>
+						<div class="content2">
+							<p class="content">Content2</p>
 						</div>
-						<!-- start SlidesJS slideshow -->
-						<div id="slides">
-							<img src="carousel/IMG_0502.JPG" width="100%" height="120%" alt="Slide 1">
-							<img src="carousel/P1000478.JPG" width="520" height="300" alt="Slide 2">
-							<img src="http://slidesjs.com/examples/standard/img/slide-3.jpg" width="520" height="300" alt="Slide 3">
-							<img src="http://slidesjs.com/examples/standard/img/slide-4.jpg" width="520" height="300" alt="Slide 4">
-							<img src="http://slidesjs.com/examples/standard/img/slide-5.jpg" width="520" height="300" alt="Slide 5">
-							<img src="http://slidesjs.com/examples/standard/img/slide-6.jpg" width="520" height="300" alt="Slide 6">
-							<img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="520" height="300" alt="Slide 7">
+						<div class="content3">
+							<p class="content">Content3</p>
 						</div>
-						<!-- end SlidesJS  slideshow -->
+						<div class="content4">
+							<p class="content">Content4</p>
+						</div>
 					</div>
-
-					<div class="content1"></div>
-					<div class="content2"></div>
-
 				</div>
 			</div>
 		</div>
