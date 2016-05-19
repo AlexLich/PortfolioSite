@@ -13,7 +13,7 @@
 		function currentSlide( current ) {
 			$(".current_slide").text(current + " of " + $("#slides").slides("status","total") );
 		}
-		
+
 		$(function(){
 			/*
 				Initialize SlidesJS
@@ -26,16 +26,16 @@
 					currentSlide( 1 );
 				}
 			});
-			
+
 			/*
 				Play/stop button
 			*/
 			$(".controls").click(function(e) {
 				e.preventDefault();
-				
+
 				// Example status method usage
 				var slidesStatus = $("#slides").slides("status","state");
-				
+
 				if (!slidesStatus || slidesStatus === "stopped") {
 
 					// Example play method usage
@@ -44,10 +44,10 @@
 					// Change text
 					$(this).text("Stop");
 				} else {
-					
+
 					// Example stop method usage
 					$("#slides").slides("stop");
-					
+
 					// Change text
 					$(this).text("Play");
 				}
@@ -56,40 +56,45 @@
 	</script>
 </head>
 <body>
-<suture>
-   <heder>
-    <p >AlexLiCH</p>
-    </heder>
-    <content>
-       <nav>
-          <a href="index.php">Главная страница</a>
-          <a href="2.html">Резюме</a>
-          <a href="3.html">Портфолио</a>
-          <a href="4.html">Фотоальбом</a>
-          <a href="4.html">Игры</a>
-          <a href="4.html">Контакты</a> 
-       </nav>
-        <div id="container">
-		
-		<!-- start SlidesJS slideshow -->
-		<div id="slides">
-				<img src="carousel/IMG_0502.JPG" width="100%" height="120%" alt="Slide 1">
-				
-				<img src="carousel/P1000478.JPG" width="520" height="300" alt="Slide 2">
+	<div class="container">
+		<div class="notepad">
+			<div class="suture">
+				<div class="head">
+					<p >AlexLiCH</p>
+				</div>
 
-				<img src="http://slidesjs.com/examples/standard/img/slide-3.jpg" width="520" height="300" alt="Slide 3">
+				<div class="toilet_paper">
+					<nav>
+					  <a href="index.php">Главная страница</a>
+					  <a href="2.html">Резюме</a>
+					  <a href="3.html">Портфолио</a>
+					  <a href="4.html">Фотоальбом</a>
+					  <a href="4.html">Игры</a>
+					  <a href="4.html">Контакты</a>
+					</nav>
+					<div id="container">
+						<div>
+							
+						</div>
+						<!-- start SlidesJS slideshow -->
+						<div id="slides">
+							<img src="carousel/IMG_0502.JPG" width="100%" height="120%" alt="Slide 1">
+							<img src="carousel/P1000478.JPG" width="520" height="300" alt="Slide 2">
+							<img src="http://slidesjs.com/examples/standard/img/slide-3.jpg" width="520" height="300" alt="Slide 3">
+							<img src="http://slidesjs.com/examples/standard/img/slide-4.jpg" width="520" height="300" alt="Slide 4">
+							<img src="http://slidesjs.com/examples/standard/img/slide-5.jpg" width="520" height="300" alt="Slide 5">
+							<img src="http://slidesjs.com/examples/standard/img/slide-6.jpg" width="520" height="300" alt="Slide 6">
+							<img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="520" height="300" alt="Slide 7">
+						</div>
+						<!-- end SlidesJS  slideshow -->
+					</div>
 
-				<img src="http://slidesjs.com/examples/standard/img/slide-4.jpg" width="520" height="300" alt="Slide 4">
+					<div class="content1"></div>
+					<div class="content2"></div>
 
-				<img src="http://slidesjs.com/examples/standard/img/slide-5.jpg" width="520" height="300" alt="Slide 5">
-
-				<img src="http://slidesjs.com/examples/standard/img/slide-6.jpg" width="520" height="300" alt="Slide 6">
-
-				<img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="520" height="300" alt="Slide 7">
+				</div>
+			</div>
 		</div>
-		<!-- end SlidesJS  slideshow -->
 	</div>
-    </content>
-</suture>
 </body>
 </html>
