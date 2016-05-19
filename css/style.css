@@ -61,10 +61,36 @@ nav>a {
     text-decoration: none;
 }
 
+.main {
+
+}
+
 .content1 {
-  background: rgb(251, 247, 233);
+  background-color: #b755c6;
+  height: 100;
 }
 
 .content2 {
+  float: left;
+  background-color: #3bb195;
+  width: 50%;
+  height: 100;
+}
 
+.content3 {
+  float: left;
+  background-color: #88a938;
+  width: 50%;
+  height: 100;
+}
+
+.content4 {
+  clear: both;
+  background-color: #cec36c;
+  width: 100%;
+  height: 100;
+}
+
+p.content {
+  padding: 10;
 }
