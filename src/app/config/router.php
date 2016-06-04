@@ -1,0 +1,69 @@
+<?php
+namespace App\Config;
+use AltoRouter;
+class Router
+{
+  protected $router;
+
+    function __construct()
+    {
+        $this->router = new AltoRouter();
+
+        $this->router->map('get', '/', function() {
+            $this->routingController('HomeController', 'index');
+        });
+
+        // $this->router->map('get', '/resume', function() {
+        //     $this->routingController('ResumeController', 'get');
+        // });
+        //
+        // $this->router->map('get', '/portfolio', function() {
+        //     $this->routingController('PortfolioController', 'index');
+        // });
+        //
+        // $this->router->map('get', '/photoalbum', function() {
+        //     $this->routingController('PhotoalbumController', 'index');
+        // });
+        //
+        $this->router->map('get', '/about', function() {
+            $this->routingController('AboutController', 'index');
+        });
+    }
+
+    public function routing()
+    {
+        $match = $this->router->match();
+        $target = $match['target'];
+        $param = $match['params'];
+
+        if($match && is_callable( $match['target'])) {
+            call_user_func_array( $match['target'], $match['params'] );
+        } else {
+            // no route was matched
+            $this->NotFound();
+        }
+    }
+
+    public function routingController($controllerName, $action, $param = null)
+    {
+        $controllerName = "App\\Controller\\".$controllerName;
+        if (class_exists($controllerName)) {
+            $controller = new $controllerName;
+            if (method_exists($controller, $action)) {
+                if (is_null($param)) {
+                    $controller->$action();
+                }  else {
+                $controller->$action($param);
+                }
+            }
+        } else {
+            $this->NotFound();
+        }
+    }
+
+    public function NotFound()
+    {
+        header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+        include('src/404.php');
+    }
+}
