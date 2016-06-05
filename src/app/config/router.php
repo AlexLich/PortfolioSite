@@ -12,21 +12,27 @@ class Router
         $this->router->map('get', '/', function() {
             $this->routingController('HomeController', 'index');
         });
-
-        // $this->router->map('get', '/resume', function() {
-        //     $this->routingController('ResumeController', 'get');
-        // });
-        //
-        // $this->router->map('get', '/portfolio', function() {
-        //     $this->routingController('PortfolioController', 'index');
-        // });
-        //
-        // $this->router->map('get', '/photoalbum', function() {
-        //     $this->routingController('PhotoalbumController', 'index');
-        // });
-        //
+        $this->router->map('get', '/resume', function() {
+            $this->routingController('ResumeController', 'index');
+        });
+        
+         $this->router->map('get', '/portfolio', function() {
+             $this->routingController('PortfolioController', 'index');
+         });
+        
+         $this->router->map('get', '/photoalbum', function() {
+             $this->routingController('PhotoalbumController', 'index');
+         });
+        
         $this->router->map('get', '/about', function() {
             $this->routingController('AboutController', 'index');
+        });
+        $this->router->map('get', '/news', function() {
+            $this->routingController('NewsController', 'getNews');
+        });
+        
+                $this->router->map('delete', '/news/[i:id]', function($id) {
+            $this->routingController('NewsController', 'deleteNew', $id);
         });
     }
 
@@ -53,7 +59,7 @@ class Router
                 if (is_null($param)) {
                     $controller->$action();
                 }  else {
-                $controller->$action($param);
+                    $controller->$action($param);
                 }
             }
         } else {
