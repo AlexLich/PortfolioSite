@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="src/assets/css/styles.css" >
+        <link rel="stylesheet" type="text/css" href="src/assets/css/carousel.css" >
+        <script src="components/jquery/jquery.js"></script>
     </head>
 
     <body>
@@ -23,7 +25,7 @@
     					  <a href='/about'>Контакты</a>
     					</nav>
 
-                        <div>
+                        <div class="main">
                             <?php include $contentView; ?>
                         </div>
 
