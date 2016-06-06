@@ -36,6 +36,8 @@ class NewsController extends Controller
             //Попытка 2
 
             //Попытка 3
+
+            //Попытка 4
         }
         $this->getNews();
     }
