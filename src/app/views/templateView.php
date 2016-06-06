@@ -31,7 +31,7 @@
 
     				    <div id="content5">
     						<ul class="footer" style="text-align=center">
-                                <li><a href="https://vk.com/alex__lich">2016 - <?php date_default_timezone_set('Europe/Moscow'); echo date("Y");?> ©Develop by AlexLiCH</a></li>
+                                <li><a href="https://vk.com/alex__lich">2016 - <?php echo date("Y");?> ©Develop by AlexLiCH</a></li>
     						    <li><a href="/">О сайте</a></li>
     						    <li><a href='/about'>Обратная связь</a></li>
     						</ul>

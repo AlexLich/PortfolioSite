@@ -17,16 +17,20 @@ class NewsController extends Controller
         $data = $this->model->getData();
         $this->view->generate('newsView.php', $data);
     }
-    
+
     public function getNews()
     {
-        
         $data = $this->model->get_News();
         $this->view->generate('newsView.php', $data);
     }
-    
+
     public function deleteNew($id) {
-        // здесь рисовать логику удаления
-        echo $id;
+        $count = $this->model->deleteNew($id);
+        
+        //Todo: Нужен редирект или сообщение об успешном удалении записи.
+        if ($count > 0) {
+            //Успешно удалены
+        }
+        $this->getNews();
     }
 }
