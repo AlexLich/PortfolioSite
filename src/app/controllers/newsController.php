@@ -29,7 +29,7 @@ class NewsController extends Controller
         
         //Todo: Нужен редирект или сообщение об успешном удалении записи.
         if ($count > 0) {
-            //Успешно удалены
+            header("Location: http://localhost:8000/news");
         }
         $this->getNews();
     }
