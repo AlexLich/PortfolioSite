@@ -124,3 +124,14 @@ nav>a {
   font-family: segoe_print_regular;
   text-decoration: none;
 }
+.log{
+    width: 220px;
+    margin: 10px auto;
+}
+.log1{
+    width: 230px;
+    margin: 10px auto;
+}
+.btt{
+         width: 60px; margin:0 auto;
+}
