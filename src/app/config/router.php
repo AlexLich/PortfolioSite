@@ -34,6 +34,9 @@ class Router
         $this->router->map('post', '/news/[i:id]', function($id) {
             $this->routingController('NewsController', 'deleteNew', $id);
         });
+        $this->router->map('get', '/login', function() {
+            $this->routingController('LoginController', 'index');
+        });
     }
 
     public function routing()
