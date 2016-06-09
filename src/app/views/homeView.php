@@ -1,3 +1,4 @@
+<title>Главная страница</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 	<script src="src/assets/js/slides.js"></script>
 	<script>

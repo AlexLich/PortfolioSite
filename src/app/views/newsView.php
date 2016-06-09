@@ -1,4 +1,5 @@
-<div class="content2">
+<title>Новостной блог</title>
+   <div class="content2">
     <?php
     foreach($data as $row) {
         echo "<div class='block'>";
