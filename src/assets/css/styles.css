@@ -10,14 +10,14 @@ html {
 }
 
 .notepad {
-padding: 3px;
+padding: 10px 3px;
 background-image:url("../img/notepad.png");
 border-radius:10px;
 box-shadow: 0.1em 3px rgba(0,0,0,0.5);
 }
 
 .suture {
-  padding: 3px 4px;
+  padding: 15px 4px;
   border: 0.1em dashed  #fff;
   border-radius:10px;
 }
@@ -103,7 +103,7 @@ nav>a {
   clear: both;
   width: 700px;
   background: url(../img/footer.png) no-repeat 0 0;
-  margin: 5px 5px -80px;
+  margin: 20px 5px -95px;
   padding: 5px 10px;
   height: 55px;
 }
@@ -123,4 +123,15 @@ nav>a {
   font-size: 12px;
   font-family: segoe_print_regular;
   text-decoration: none;
+}
+.log{
+    width: 220px;
+    margin: 10px auto;
+}
+.log1{
+    width: 230px;
+    margin: 10px auto;
+}
+.btt{
+         width: 60px; margin:0 auto;
 }

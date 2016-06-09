@@ -28,16 +28,15 @@
                         <div class="main">
                             <?php include $contentView; ?>
                         </div>
-
+                        <div style="clear: both;"></div>
+    				</div>
     				    <div id="content5">
-    						<ul class="footer" style="text-align=center">
+    						<ul class="footer" >
                                 <li><a href="https://vk.com/alex__lich">2016 - <?php echo date("Y");?> ©Develop by AlexLiCH</a></li>
     						    <li><a href="/">О сайте</a></li>
     						    <li><a href='/about'>Обратная связь</a></li>
     						</ul>
     					</div>
-
-    				</div>
     			</div>
     		</div>
     	</div>
