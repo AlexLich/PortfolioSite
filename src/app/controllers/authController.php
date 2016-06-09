@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Core\Controller;
-use App\Services\AuthService;
+use App\Service\AuthService;
 
 class AuthController extends Controller
 {
@@ -21,15 +21,16 @@ class AuthController extends Controller
 
     public function login()
     {
-        $user = $_POST["user"];
+        $username = $_POST["username"];
         $password = $_POST["password"];
 
-        var_dump($user);
-        var_dump($password);
-
-        $isAuth = $this->authService->login($user, $password);
-
+        $isAuth = $this->authService->login($username, $password);
+        
         var_dump($isAuth);
+
+        if ($isAuth) {
+            // header("Location: $ref");
+        }
     }
 
     public function logout()
