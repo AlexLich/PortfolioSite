@@ -37,6 +37,14 @@ class Router
 
         $this->router->map('get', '/login', function() {
             $this->routingController('AuthController', 'index');
+        }); 
+        
+        $this->router->map('get', '/logout', function() {
+            $this->routingController('AuthController', 'logout');
+        });
+        
+        $this->router->map('get', '/admin', function() {
+            $this->routingController('AdminController', 'index');
         });
 
         $this->router->map('post', '/login', function() {
