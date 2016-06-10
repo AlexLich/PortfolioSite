@@ -26,15 +26,14 @@ class AuthController extends Controller
 
         $isAuth = $this->authService->login($username, $password);
         
-        var_dump($isAuth);
-
         if ($isAuth) {
-            // header("Location: $ref");
+            header("Location: /admin");
         }
     }
 
     public function logout()
     {
-
+        $this->authService->logout();
+        header("Location: /");
     }
 }
