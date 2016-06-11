@@ -20,10 +20,6 @@ class Router
              $this->routingController('PortfolioController', 'index');
          });
 
-         $this->router->map('get', '/photoalbum', function() {
-             $this->routingController('PhotoalbumController', 'index');
-         });
-
         $this->router->map('get', '/about', function() {
             $this->routingController('AboutController', 'index');
         });
@@ -31,9 +27,9 @@ class Router
             $this->routingController('NewsController', 'getNews');
         });
 
-        $this->router->map('post', '/news/[i:id]', function($id) {
-            $this->routingController('NewsController', 'deleteNew', $id);
-        });
+//        $this->router->map('post', '/news/[i:id]', function($id) {
+//            $this->routingController('NewsController', 'deleteNew', $id);
+//        });
 
         $this->router->map('get', '/login', function() {
             $this->routingController('AuthController', 'index');
@@ -49,6 +45,15 @@ class Router
 
         $this->router->map('post', '/login', function() {
             $this->routingController('AuthController', 'login');
+        });
+        
+        
+        $this->router->map('get', '/delnews', function() {
+            $this->routingController('delNewsController', 'getNews');
+        });
+
+        $this->router->map('post', '/delnews/[i:id]', function($id) {
+            $this->routingController('delNewsController', 'deleteNew', $id);
         });
     }
 
