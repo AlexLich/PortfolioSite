@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="src/assets/css/styles.css" >
-        <link rel="stylesheet" type="text/css" href="src/assets/css/carousel.css" >
+        <link rel="stylesheet" type="text/css" href="/src/assets/css/styles.css" >
+        <link rel="stylesheet" type="text/css" href="/src/assets/css/carousel.css" >
         <script src="components/jquery/jquery.js"></script>
     </head>
 
@@ -19,6 +19,7 @@
     				<div class="toilet_paper">
     					<nav>
     					  <a href="/">Главная страница</a>
+                          <a href="/articles">Статья</a>
     					  <a href="/resume">Резюме</a>
     					  <a href="/portfolio">Портфолио</a>
     					  <a href='/about'>Контакты</a>
