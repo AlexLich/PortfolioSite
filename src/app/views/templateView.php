@@ -21,7 +21,6 @@
     					  <a href="/">Главная страница</a>
     					  <a href="/resume">Резюме</a>
     					  <a href="/portfolio">Портфолио</a>
-    					  <a href="/photoalbum">Фотоальбом</a>
     					  <a href='/about'>Контакты</a>
     					</nav>
 
