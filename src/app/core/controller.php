@@ -18,8 +18,4 @@ class Controller
 
         $this->view = new TwigView($template, $params);
     }
-
-    public function index()
-    {
-    }
 }
