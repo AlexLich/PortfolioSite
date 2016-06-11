@@ -25,10 +25,8 @@ class AuthController extends Controller
         $password = $_POST["password"];
 
         $isAuth = $this->authService->login($username, $password);
-        
-        if ($isAuth) {
-            header("Location: /admin");
-        }
+
+        header("Location: /");
     }
 
     public function logout()
