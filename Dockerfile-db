@@ -1,5 +1,5 @@
 FROM mysql:latest
 ENV MYSQL_USER root
 ENV MYSQL_ROOT_PASSWORD 12345
-ENV MYSQL_DATABASE msgs
+ENV MYSQL_DATABASE gbook
 ADD /db/init.sql /docker-entrypoint-initdb.d/
