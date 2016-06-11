@@ -24,13 +24,13 @@ class NewsController extends Controller
         $this->view->generate('newsView.php', $data);
     }
 
-    public function deleteNew($id) {
-        $count = $this->model->deleteNew($id);
-
-        //Todo: Нужен редирект или сообщение об успешном удалении записи.
-        if ($count > 0) {
-            header("Location: /news");
-        }
-        $this->getNews();
-    }
+//    public function deleteNew($id) {
+//        $count = $this->model->deleteNew($id);
+//
+//        //Todo: Нужен редирект или сообщение об успешном удалении записи.
+//        if ($count > 0) {
+//            header("Location: /news");
+//        }
+//        $this->getNews();
+//    }
 }
