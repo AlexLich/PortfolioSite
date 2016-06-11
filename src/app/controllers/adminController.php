@@ -20,6 +20,18 @@ class AdminController extends Controller
         $this->view->generate('adminView.php');
     }
     
+    public function addNew() {
+        $this->checkAuth();
+        
+        //написать логику добавления
+    }
+    
+    public function deleteNew() {
+        $this->checkAuth();
+        
+        //написать логику удаления
+    }
+    
     public function getData() {
         $this->checkAuth();
         
