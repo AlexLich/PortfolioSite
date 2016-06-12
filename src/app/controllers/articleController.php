@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Core\Controller;
 use App\Service\ArticleService;
 use App\Service\AuthService;
+use App\Model\Article;
 
 class ArticleController extends Controller
 {
@@ -20,13 +21,16 @@ class ArticleController extends Controller
     public function getAll()
     {
         $isAuth = $this->authService->isAuth();
-        $data = $this->articleService->getAll();
-        $this->view->generate('articlesView.php', $data, $isAuth);
+        $articles = $this->articleService->getAll();
+
+        $data = array('isAuth' => $isAuth, 'articles' => $articles);
+
+        $this->view->render('articles.html.twig', $data);
     }
 
     public function getForm()
     {
-        $this->view->generate('articleAddView.php', null, false);
+        $this->view->render('article.form.html.twig');
     }
 
     public function add()
@@ -34,7 +38,12 @@ class ArticleController extends Controller
         $name = $_POST['name'];
         $content = $_POST['content'];
 
-        $this->articleService->add($name, $content);
+        $article = new Article();
+
+        $article->name = $name;
+        $article->content = $content;
+
+        $this->articleService->add($article);
         header("Location: /articles");
     }
 
