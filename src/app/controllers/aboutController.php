@@ -7,6 +7,6 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $this->view->generate('abountView.php');
+        $this->view->render('abount.html.twig');
     }
 }

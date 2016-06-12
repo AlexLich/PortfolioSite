@@ -7,10 +7,15 @@ class Controller
 
     function __construct()
     {
-        $this->view = new View();
-    }
+        $template = array('src/app/views','src/app/views/templates');
 
-    public function index()
-    {
+        //В продакшне отключать его.
+        $params = array(
+            'cache' => "tmp/cache",
+            'auto_reload' => true,
+            'autoescape' => true
+        );
+
+        $this->view = new TwigView($template, $params);
     }
 }
