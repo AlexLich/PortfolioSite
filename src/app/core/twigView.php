@@ -14,8 +14,8 @@ class TwigView
         $this->twig = new Twig_Environment($loader, $params);
     }
 
-    public function render($template, $params)
+    public function render($template, $params = array())
     {
-        return $this->twig->render($template, $params);
+        echo $this->twig->render($template, $params);
     }
 }
