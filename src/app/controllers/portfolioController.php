@@ -7,6 +7,6 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $this->view->generate('portfolioView.php');
+        $this->view->render('portfolio.html.twig');
     }
 }

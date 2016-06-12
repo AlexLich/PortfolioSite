@@ -16,7 +16,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        $this->view->generate('loginView.php');
+        $this->view->render('login.html.twig');
     }
 
     public function login()

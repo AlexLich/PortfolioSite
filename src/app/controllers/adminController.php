@@ -17,7 +17,7 @@ class AdminController extends Controller
     {
         $this->checkAuth();
         
-        $this->view->generate('adminView.php');
+        $this->view->render('adminView.php');
     }
     
     public function addNew() {

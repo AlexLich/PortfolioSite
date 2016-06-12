@@ -15,6 +15,6 @@ class HomeController extends Controller
     public function index()
     {
         $data = $this->model->getData();
-        $this->view->generate('homeView.php', $data);
+        $this->view->render('home.html.twig', $data);
     }
 }
