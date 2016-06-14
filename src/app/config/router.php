@@ -52,6 +52,14 @@ class Router
         $this->router->map('post', '/articles/[i:id]', function($id) {
             $this->routingController('ArticleController', 'delete', $id);
         });
+
+        $this->router->map('get', '/articles/[i:id]/edit', function($id) {
+            $this->routingController('ArticleController', 'edit', $id);
+        });
+
+        $this->router->map('post', '/articles/[i:id]/edit', function($id) {
+            $this->routingController('ArticleController', 'save', $id);
+        });
     }
 
     public function routing()
