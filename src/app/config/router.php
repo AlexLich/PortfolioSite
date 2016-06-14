@@ -12,6 +12,7 @@ class Router
         $this->router->map('get', '/', function() {
             $this->routingController('HomeController', 'index');
         });
+
         $this->router->map('get', '/resume', function() {
             $this->routingController('ResumeController', 'index');
         });
@@ -23,37 +24,41 @@ class Router
         $this->router->map('get', '/about', function() {
             $this->routingController('AboutController', 'index');
         });
-        $this->router->map('get', '/news', function() {
-            $this->routingController('NewsController', 'getNews');
-        });
-
-//        $this->router->map('post', '/news/[i:id]', function($id) {
-//            $this->routingController('NewsController', 'deleteNew', $id);
-//        });
 
         $this->router->map('get', '/login', function() {
             $this->routingController('AuthController', 'index');
-        }); 
-        
-        $this->router->map('get', '/logout', function() {
-            $this->routingController('AuthController', 'logout');
-        });
-        
-        $this->router->map('get', '/admin', function() {
-            $this->routingController('AdminController', 'index');
         });
 
         $this->router->map('post', '/login', function() {
             $this->routingController('AuthController', 'login');
         });
-        
-        
-        $this->router->map('get', '/delnews', function() {
-            $this->routingController('delNewsController', 'getNews');
+
+        $this->router->map('get', '/logout', function() {
+            $this->routingController('AuthController', 'logout');
         });
 
-        $this->router->map('post', '/delnews/[i:id]', function($id) {
-            $this->routingController('delNewsController', 'deleteNew', $id);
+        $this->router->map('get', '/articles', function() {
+            $this->routingController('ArticleController', 'getAll');
+        });
+
+        $this->router->map('get', '/articles/form', function() {
+            $this->routingController('ArticleController', 'getForm');
+        });
+
+        $this->router->map('post', '/articles', function() {
+            $this->routingController('ArticleController', 'add');
+        });
+
+        $this->router->map('post', '/articles/[i:id]', function($id) {
+            $this->routingController('ArticleController', 'delete', $id);
+        });
+
+        $this->router->map('get', '/articles/[i:id]/edit', function($id) {
+            $this->routingController('ArticleController', 'edit', $id);
+        });
+
+        $this->router->map('post', '/articles/[i:id]/edit', function($id) {
+            $this->routingController('ArticleController', 'save', $id);
         });
     }
 

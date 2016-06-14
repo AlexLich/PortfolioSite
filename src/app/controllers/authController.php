@@ -16,7 +16,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        $this->view->generate('loginView.php');
+        $this->view->render('login.html.twig');
     }
 
     public function login()
@@ -25,10 +25,8 @@ class AuthController extends Controller
         $password = $_POST["password"];
 
         $isAuth = $this->authService->login($username, $password);
-        
-        if ($isAuth) {
-            header("Location: /admin");
-        }
+
+        header("Location: /");
     }
 
     public function logout()

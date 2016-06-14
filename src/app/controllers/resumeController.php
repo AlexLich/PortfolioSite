@@ -7,6 +7,6 @@ class ResumeController extends Controller
 {
     public function index()
     {
-        $this->view->generate('resumeView.php');
+        $this->view->render('resume.html.twig');
     }
 }

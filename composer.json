@@ -1,7 +1,8 @@
 {
   "require": {
     "components/jquery": "2.*",
-    "altorouter/altorouter": "1.*"
+    "altorouter/altorouter": "1.*",
+    "twig/twig": "^1.24"
   },
   "autoload": {
     "files": [
