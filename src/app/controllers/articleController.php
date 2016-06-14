@@ -52,4 +52,32 @@ class ArticleController extends Controller
         $this->articleService->delete($id);
         header("Location: /articles");
     }
+
+    public function edit($id)
+    {
+        $article = $this->articleService->getById($id);
+
+        print_r($article);
+
+        $data = array('article' => $article);
+
+        //var_dump($data);
+
+        $this->view->render('article.edit.html.twig', $data);
+    }
+
+    public function save($id)
+    {
+        $name = $_POST['name'];
+        $content = $_POST['content'];
+
+        $article = new Article();
+
+        $article->id = $id;
+        $article->name = $name;
+        $article->content = $content;
+
+        $this->articleService->save($article);
+        header("Location: /articles");
+    }
 }
