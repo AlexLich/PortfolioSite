@@ -2,7 +2,7 @@
 namespace App\Service;
 
 use App\Config\Connect;
-use App\Model;
+use App\Model\Article;
 use PDO;
 
 class ArticleService
@@ -27,6 +27,26 @@ class ArticleService
         return $data;
     }
 
+    public function getById($id)
+    {
+        $data = null;
+        $sql="SELECT id, name, content, UNIX_TIMESTAMP(datetime) as dt FROM articles where id='$id'";
+
+        $pdo = $this->connect->getDb();
+        if(!is_null($pdo)) {
+            $data = $pdo->query($sql)->fetch();
+            $pdo = null;
+        }
+
+        $article = new Article();
+
+        $article->id = $data["id"];
+        $article->name = $data["name"];
+        $article->content = $data["content"];
+
+        return $article;
+    }
+
     public function add($article)
     {
         $count = 0;
@@ -42,6 +62,19 @@ class ArticleService
     {
         $count = 0;
         $sql = "DELETE FROM articles WHERE id = $id";
+        $pdo = $this->connect->getDb();
+        if(!is_null($pdo)) {
+            $count = $pdo->exec($sql);
+        }
+        return $count;
+    }
+
+    public function save($article)
+    {
+        $count = 0;
+
+        $sql ="UPDATE articles set name='$article->name', content='$article->content' where id='$article->id'";
+
         $pdo = $this->connect->getDb();
         if(!is_null($pdo)) {
             $count = $pdo->exec($sql);
