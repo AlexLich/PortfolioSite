@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<div class="content2">
+    <form action='/articles/{{ article.id }}/edit' method='POST'>
+      <div>
+        <label for="txtName">Название</label>
+        <input id="txtName" type="text" name="name" value="{{ article.name }}"/>
+      </div>
+      <div>
+        <label for="txtContent">Текст</label>
+        <input id="txtContent" type="text" name="content" value="{{ article.content }}"/>
+      </div>
+      <input type='submit' value='Сохранить'>
+    </form>
+</div>
+{% endblock %}
