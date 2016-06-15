@@ -57,11 +57,7 @@ class ArticleController extends Controller
     {
         $article = $this->articleService->getById($id);
 
-        print_r($article);
-
         $data = array('article' => $article);
-
-        //var_dump($data);
 
         $this->view->render('article.edit.html.twig', $data);
     }
