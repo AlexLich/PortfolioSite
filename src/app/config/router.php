@@ -41,9 +41,12 @@ class Router
             $this->routingController('ArticleController', 'getAll');
         });
 
-        $this->router->map('get', '/articles/form', function() {
-            $this->routingController('ArticleController', 'getForm');
-        });
+
+        // Я не понял зачем это?
+
+        // $this->router->map('get', '/articles/form', function() {
+        //     $this->routingController('ArticleController', 'getForm');
+        // });
 
         $this->router->map('post', '/articles', function() {
             $this->routingController('ArticleController', 'add');
@@ -59,6 +62,10 @@ class Router
 
         $this->router->map('post', '/articles/[i:id]/edit', function($id) {
             $this->routingController('ArticleController', 'save', $id);
+        });
+
+        $this->router->map('get', '/articles/[i:id]/read', function($id) {
+            $this->routingController('ArticleController', 'read', $id);
         });
     }
 
