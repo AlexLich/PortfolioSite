@@ -62,6 +62,15 @@ class ArticleController extends Controller
         $this->view->render('article.edit.html.twig', $data);
     }
 
+    public function read($id)
+    {
+        $article = $this->articleService->getById($id);
+
+        $data = array('article' => $article);
+
+        $this->view->render('article.read.html.twig', $data);
+    }
+
     public function save($id)
     {
         $name = $_POST['name'];
