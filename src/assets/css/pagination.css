@@ -1,0 +1,10 @@
+div.pagination {
+
+}
+
+a.disabled {
+  pointer-events: none; /* делаем ссылку неактивной */
+  cursor: default; /*  курсор в виде стрелки */
+  color: #888;/* цвет текста ссылки серый */
+  text-decoration: none;
+}
