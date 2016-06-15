@@ -1,6 +1,6 @@
 <div class='block'>
   <a href="/articles/{{article.id}}/read"><h3 style="word-break: break-word;"> {{ article.name }} </h3></a>
-  <p style="word-break: break-word;"> {{ article.content }} </p>
+  <p style="white-space: pre-wrap; word-wrap: break-word;"> {{ article.content }} </p>
 
   {% if isAuth %}
     <form action='/articles/{{ article.id }}' method='POST'>
