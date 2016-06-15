@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(25) NOT NULL DEFAULT '',
+  `name` text,
   `content` text,
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
