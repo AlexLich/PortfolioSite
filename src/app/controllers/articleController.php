@@ -85,4 +85,38 @@ class ArticleController extends Controller
         $this->articleService->save($article);
         header("Location: /articles");
     }
+
+    public function paginate($number)
+    {
+        //Количетсво строк на странице
+        $limit = 5;
+        $total = $this->articleService->getCount();
+        $numbers = (int) ($total / $limit) + 1;
+
+        if ($number <= 1) {
+            $number = 1;
+        }
+
+        //1 > 4, то установить 4
+        if ($number > $numbers) {
+            $number = $numbers;
+        }
+
+        //4 - 1 = 3
+        $start = $number - 1;
+        $start = $start * $limit;
+        print_r($start);
+        $articles = $this->articleService->getSegment($start, $limit);
+
+        $data = array(
+                    'articles' => $articles,
+                    'numbers' => $numbers,
+                    'prev' => $number - 1,
+                    'next' => $number + 1
+                );
+
+
+        // print_r($data);
+        $this->view->render('articles.html.twig', $data);
+    }
 }
