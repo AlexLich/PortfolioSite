@@ -19,7 +19,7 @@
     				<div class="toilet_paper">
     					<nav>
     					  <a href="/">Главная страница</a>
-                          <a href="/articles">Статья</a>
+                          <a href="/articles">Статьи</a>
     					  <a href="/resume">Резюме</a>
     					  <a href="/portfolio">Портфолио</a>
     					  <a href='/about'>Контакты</a>
