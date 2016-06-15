@@ -1,5 +1,5 @@
 <div class='block'>
-  <h3 style="word-break: break-word;"> {{ article.name }} </h3>
+  <a href="/articles/{{article.id}}/read"><h3 style="word-break: break-word;"> {{ article.name }} </h3></a>
   <p style="word-break: break-word;"> {{ article.content }} </p>
 
   {% if isAuth %}
