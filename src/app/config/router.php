@@ -37,8 +37,12 @@ class Router
             $this->routingController('AuthController', 'logout');
         });
 
-        $this->router->map('get', '/articles', function() {
-            $this->routingController('ArticleController', 'getAll');
+        // $this->router->map('get', '/articles', function() {
+        //     $this->routingController('ArticleController', 'getAll');
+        // });
+
+        $this->router->map('get', '/articles/[i:number]', function($number) {
+            $this->routingController('ArticleController', 'paginate', $number);
         });
 
         $this->router->map('get', '/articles/form', function() {
