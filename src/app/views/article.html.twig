@@ -1,6 +1,6 @@
 <div class='block'>
   <p> {{ article.name }} </p>
-  <p> {{ article.content }} </p>
+  <p style="word-break: break-word;"> {{ article.content }} </p>
 
   {% if isAuth %}
     <form action='/articles/{{ article.id }}' method='POST'>
