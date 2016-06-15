@@ -26,6 +26,9 @@
     					  <a href="/resume">Резюме</a>
     					  <a href="/portfolio">Портфолио</a>
     					  <a href='/about'>Контакты</a>
+                {% if isAuth %}
+                  <a href="/logout">Выход</a>
+                {% endif %}
     					</nav>
 
               <div class="main">
