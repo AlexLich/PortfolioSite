@@ -37,20 +37,13 @@ class Router
             $this->routingController('AuthController', 'logout');
         });
 
-        // $this->router->map('get', '/articles', function() {
-        //     $this->routingController('ArticleController', 'getAll');
-        // });
-
         $this->router->map('get', '/articles/[i:number]', function($number) {
             $this->routingController('ArticleController', 'paginate', $number);
         });
 
-
-        // Я не понял зачем это?
-
-        // $this->router->map('get', '/articles/form', function() {
-        //     $this->routingController('ArticleController', 'getForm');
-        // });
+        $this->router->map('get', '/articles/form', function() {
+            $this->routingController('ArticleController', 'getForm');
+        });
 
         $this->router->map('post', '/articles', function() {
             $this->routingController('ArticleController', 'add');
