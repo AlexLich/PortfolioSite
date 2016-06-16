@@ -44,13 +44,13 @@ class ArticleController extends Controller
         $article->content = $content;
 
         $this->articleService->add($article);
-        header("Location: /articles");
+        header("Location: /articles/1");
     }
 
     public function delete($id)
     {
         $this->articleService->delete($id);
-        header("Location: /articles");
+        header("Location: /articles/1");
     }
 
     public function edit($id)
@@ -83,11 +83,13 @@ class ArticleController extends Controller
         $article->content = $content;
 
         $this->articleService->save($article);
-        header("Location: /articles");
+        header("Location: /articles/1");
     }
 
     public function paginate($number)
     {
+        $isAuth = $this->authService->isAuth();
+
         //Количетсво строк на странице
         $limit = 5;
         $total = $this->articleService->getCount();
@@ -97,26 +99,45 @@ class ArticleController extends Controller
             $number = 1;
         }
 
-        //1 > 4, то установить 4
         if ($number > $numbers) {
             $number = $numbers;
         }
 
-        //4 - 1 = 3
         $start = $number - 1;
         $start = $start * $limit;
-        print_r($start);
+
         $articles = $this->articleService->getSegment($start, $limit);
 
+        $this->cutPartContent($articles, 150);
+
         $data = array(
+                    'isAuth' => $isAuth,
                     'articles' => $articles,
                     'numbers' => $numbers,
                     'prev' => $number - 1,
                     'next' => $number + 1
                 );
 
+                // print_r($data[articles][0]);
 
-        // print_r($data);
         $this->view->render('articles.html.twig', $data);
+    }
+
+    private function cutPartContent($articles, $lenght)
+    {
+        foreach ($articles as $article) {
+            $string = $article->content;
+
+            if (strlen($string) > $lenght) {
+
+                // truncate string
+                $stringCut = mb_substr($string, 0, $lenght);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = mb_substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+
+                $article->content = $string;
+            }
+        }
     }
 }
