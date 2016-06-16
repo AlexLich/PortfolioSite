@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+  <div class="content2">
+    <form method="post" action="/articles">
+      <div>
+        <label for="txtName">Название</label>
+        <p><textarea rows="2" cols="55" name="name" value=></textarea></p>
+      </div>
+      <div>
+        <label for="txtContent">Текст</label>
+        <p><textarea rows="30" cols="85" name="content" value=></textarea></p>
+      </div>
+      <div>
+        <button type="submit">Добавить</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

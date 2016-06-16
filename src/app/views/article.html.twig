@@ -1,0 +1,12 @@
+<div class='block'>
+  <a href="/articles/{{article.id}}/read"><h3 style="word-break: break-word;"> {{ article.name }} </h3></a>
+  <p style="white-space: pre-wrap; word-wrap: break-word;">{{ article.content }}</p>
+
+  {% if isAuth %}
+    <form action='/articles/{{ article.id }}' method='POST'>
+      <input type='submit' value='Удалить'>
+    </form>
+
+    <a href="/articles/{{article.id}}/edit">Редактировать</a>
+  {% endif %}
+</div>

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}Главная страница{% endblock %}
+{% block head %}
+	{{ parent() }}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="/src/assets/js/slides.js"></script>
+		<script>
+			/*
+				Get the curent slide
+			*/
+			function currentSlide( current ) {
+				$(".current_slide").text(current + " of " + $("#slides").slides("status","total") );
+			}
+			$(function(){
+				/*
+					Initialize SlidesJS
+				*/
+				$("#slides").slides({
+					navigateEnd: function( current ) {
+						currentSlide( current );
+					},
+					loaded: function(){
+						currentSlide( 1 );
+					}
+				});
+			});
+		</script>
+{% endblock %}
+
+
+{% block content %}
+	<div class="content1">
+		<div id="slides">
+	    <img src="/src/assets/carousel/IMG_0502.JPG" width="520" height="340" alt="Slide 1">
+	    <img src="/src/assets/carousel/P1000478.JPG" width="520" height="300" alt="Slide 2">
+	    <img src="https://pp.vk.me/c405230/v405230578/7e54/LhzKK1po4iQ.jpg" width="520" height="300" alt="Slide 3">
+	    <img src="/src/assets/carousel/1.JPG" width="520" height="300" alt="Slide 4">
+	    <img src="https://pp.vk.me/c419225/v419225578/3933/meWzhfT9jCo.jpg" width="520" height="300" alt="Slide 5">
+	    <img src="/src/assets/carousel/P1010487.JPG" width="520" height="300" alt="Slide 6">
+	    <img src="/src/assets/carousel/P1010619.JPG" width="520" height="300" alt="Slide 7">
+    </div>
+  </div>
+  <div class="content2">
+		<p style="white-space: pre-wrap; word-wrap: break-word;"><font size="5" style="color:blue;">У</font>важаемые посетители сайта! Вы находитесь на страницах портфолио веб-программиста AlexLiCH.
+
+<font size="5" style="color:blue;">С</font>кажу коротко и ясно – я занимаюсь созданием веб-проектов. Мои работы – это творческий подход к каждому заданию.
+
+<font size="5" style="color:blue;">П</font>рограммист – это не профессия, а стиль жизни! Интернет – это виртуальная реальность. Мой дизайн позволяет делать ее ярче, а технологии программирования — современной и динамичной.
+
+<font size="5" style="color:blue;">Е</font>сли вы нуждаетесь в услугах профессионального веб-программиста, ознакомьтесь с моими работами в соответствующих разделах сайта и сделайте правильный выбор!
+
+<font size="5" style="color:blue;">Х</font>очу рассказать немного о себе! В свободное время я занимаюсь написанием статей для своего блога. Предпочитаю активный отдых: спорт, рыбалка. В моем лице вы найдете не только веб-программиста, но и человека, с которым легко найти общий язык!
+		</p>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+{% block title %}Статьи{% endblock %}
+{% block head %}
+  {{parent()}}
+  <link rel="stylesheet" href="/src/assets/css/pagination.css" type="text/css">
+{% endblock %}
+{% set classLink = "" %}
+{% block content %}
+  <title>Новостной блог</title>
+    <div class="content2">
+      {% if isAuth %}
+        <a href="/articles/form">Дабавить новость</a>
+      {% endif %}
+
+      {% for article in articles %}
+        {{ include('article.html.twig') }}
+      {% endfor %}
+
+      <div>
+        {% if prev < 1 %}
+          {% set classLink = "class=disabled" %}
+        {% endif %}
+        <a href="/articles/{{prev}}" {{classLink}}>previous</a>
+
+        {% for i in range(1, numbers) %}
+          <a href="/articles/{{i}}">{{i}}</a>
+        {% endfor %}
+
+        {% if next > numbers %}
+          {% set classLink = "class=disabled" %}
+        {% else %}
+          {% set classLink = "" %}
+        {% endif %}
+        <a href="/articles/{{next}}" {{classLink}}>next</a>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/src/assets/css/styles.css" >
+    <link rel="stylesheet" type="text/css" href="/src/assets/css/carousel.css" >
+    <script src="/components/jquery/jquery.js"></script>
+    {% endblock %}
+  </head>
+
+    <body>
+    	<div class="container">
+    		<div class="notepad">
+    			<div class="suture">
+
+    				<div class="head">
+    					<p>AlexLiCH</p>
+    				</div>
+
+    				<div class="toilet_paper">
+    					<nav>
+    					  <a href="/">Главная страница</a>
+                <a href="/articles/1">Статьи</a>
+    					  <a href="/resume">Резюме</a>
+    					  <a href="/portfolio">Портфолио</a>
+    					  <a href='/about'>Контакты</a>
+                {% if isAuth %}
+                  <a href="/logout">Выход</a>
+                {% endif %}
+    					</nav>
+
+              <div class="main">
+                {% block content %} {% endblock %}
+              </div>
+
+              <div style="clear: both;"></div>
+    				</div>
+    				    <div id="content5">
+    						<ul class="footer" >
+                    <li><a href="https://vk.com/alex__lich">2016 - {{ "now" | date('Y') }} ©Develop by AlexLiCH</a></li>
+    						    <li><a href="/">О сайте</a></li>
+    						    <li><a href='/about'>Обратная связь</a></li>
+    						</ul>
+    					</div>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

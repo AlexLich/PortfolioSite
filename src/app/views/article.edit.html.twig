@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<div class="content2">
+    <form action='/articles/{{ article.id }}/edit' method='POST'>
+      <div>
+        <label for="txtName">Название</label>
+        <p><textarea rows="2" cols="55" name="name" value=>{{ article.name }}</textarea></p>
+      </div>
+      <div>
+        <label for="txtContent">Текст</label>
+        <p><textarea rows="30" cols="85" name="content" value=>{{ article.content }}</textarea></p>
+      </div>
+      <input type='submit' value='Сохранить'>
+    </form>
+</div>
+{% endblock %}
