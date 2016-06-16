@@ -4,11 +4,11 @@
     <form action='/articles/{{ article.id }}/edit' method='POST'>
       <div>
         <label for="txtName">Название</label>
-        <input id="txtName" type="text" name="name" value="{{ article.name }}"/>
+        <p><textarea rows="2" cols="55" name="name" value=>{{ article.name }}</textarea></p>
       </div>
       <div>
         <label for="txtContent">Текст</label>
-        <p><textarea rows="50" cols="55" name="content" value=>{{ article.content }}</textarea></p>
+        <p><textarea rows="30" cols="85" name="content" value=>{{ article.content }}</textarea></p>
       </div>
       <input type='submit' value='Сохранить'>
     </form>
