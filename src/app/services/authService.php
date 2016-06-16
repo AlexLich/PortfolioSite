@@ -7,14 +7,14 @@ class AuthService
 
     protected $users = array (
         array(
-            'username' => 'test' ,
-            'password' => 'pwd'
+            'username' => '@alexnod90' ,
+            'password' => 'test'
     ));
 
     public function login($username, $password)
     {
         $result = false;
-        
+
         if ($username and $password) {
             $user = $this->findUser($username);
             if ($user) {
@@ -39,10 +39,10 @@ class AuthService
     public function findUser($username)
     {
         $result = false;
-
+//это проверка из файла с хэша
 //         if(is_file(FILE_NAME)) {
 //             $users = file(FILE_NAME);
-//        
+//
 //             foreach($users as $user) {
 //                 if(strpos($user, $username.':') !== false) {
 //                     $result = $user;
@@ -57,10 +57,10 @@ class AuthService
         }
         return $result;
     }
-    
+
     public function isAuth() {
         $isAuth = false;
-        
+
         session_start();
         if(isset($_SESSION['admin'])) {
             $isAuth = $_SESSION['admin'];
