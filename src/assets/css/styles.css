@@ -60,30 +60,9 @@ nav>a {
     padding: 10px 0px 10px 25px;
     float: left;
     background: url(../img/paper.PNG) repeat-y;
-    width: 60%;
+    width: 650px;
 }
-#content3 {
-    margin: 10px 0px -85px;
-    position: relative;
-    float: left;
-    width: 35%;
-    height: 100px;
-    background: url(../img/heder-sidebar.PNG) no-repeat 0 0;
-    z-index: 2;
-}
-#content3>p {
-    font-family: segoe_print_regular;
-    margin: 40px 0px 0px 45px;
-}
-.content4 {
-    margin: 20px 17px 0px 0px;
-    padding: 35px 0px 10px 10px;
-    position: relative;
-    float: right;
-    background: url(../img/netp.png) repeat-y 0 0;
-    width: 28%;
-    z-index: 1;
-}
+
 #content5 {
     clear: both;
     width: 700px;
@@ -127,6 +106,4 @@ div.block {
     margin: 1px;
     padding: 5px;
     height: auto;
-    border: 1px solid black;
-    background-color: #abc;
 }
