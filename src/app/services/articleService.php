@@ -98,13 +98,13 @@ class ArticleService
     public function getSegment($start, $limit)
     {
         $data = null;
-        $sql="SELECT id, name, content, UNIX_TIMESTAMP(datetime) as dt FROM articles LIMIT $start, $limit";
+        $sql="SELECT id, name, content, UNIX_TIMESTAMP(datetime) as dt FROM articles ORDER BY id DESC LIMIT $start, $limit";
         $pdo = $this->connect->getDb();
         if(!is_null($pdo)) {
             $data = $pdo->query($sql)->fetchAll(PDO::FETCH_CLASS, "App\\Model\\Article");
             $pdo = null;
         }
-
+        
         return $data;
     }
 }
